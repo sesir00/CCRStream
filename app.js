@@ -1,8 +1,6 @@
 const API_KEY = `91dd49bcc013c39f849b72e27d063595`
 const image_path = `https://image.tmdb.org/t/p/w1280`
 
-// - API key will only be available for this video since I'll delete it right after that but you can go to https://www.themoviedb.org/ , create an account and get a key for free.
-// - Image path is only the base url from where we'll get the images.
 
 const input = document.querySelector('.search input')
 const btn = document.querySelector('.search button')
@@ -221,7 +219,7 @@ async function add_to_dom_trending () {
     const data = await get_trending_movies()
     console.log(data);
 
-    trending_el.innerHTML = data.slice(0, 5).map(e => {
+    trending_el.innerHTML = data.slice(0, 12).map(e => {
         return `
             <div class="card" data-id="${e.id}">
                 <div class="img">
